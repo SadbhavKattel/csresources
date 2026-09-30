@@ -143,8 +143,9 @@
     "title": "JANE STREET INSIGHT",
     "description": "Free multi-day program at Jane Street where students learn about trading, software engineering, and strategy, with travel and housing covered. No finance background needed.",
     "logo": {
-      "type": "card",
-      "text": "Jane Street"
+      "type": "image",
+      "file": "logos/jane-street-insight.png",
+      "max_height": 300
     },
     "source": "https://www.janestreet.com/join-jane-street/programs-and-events/insight/"
   },
