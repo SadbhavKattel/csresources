@@ -1,6 +1,6 @@
 # Fellowship slides (TikTok, 1080x1920)
 
-New slides in the same template as the original AI4ALL / Outreachy / LFX / GSoC / MLH slides.
+New slides with an "APPLY IF YOU'RE A CS STUDENT" header, in the same template as the original AI4ALL / Outreachy / LFX / GSoC / MLH slides.
 
 - `output/` holds the finished slides.
 - `programs.json` holds each slide's title, description, logo, and source link.
@@ -18,7 +18,6 @@ A file in `logos/` always replaces the white placeholder card.
 
 ## Logo status
 
-Real logos: Explore Microsoft, Uber Career Prep, CodePath, Rewriting the Code.
+Real logos: Explore Microsoft, Uber Career Prep, Summer of Bitcoin, CodePath, ColorStack, Rewriting the Code.
 Placeholder name cards that still need the official logo: SEO Tech Developer, Code2040, KP Fellows,
-Neo Scholars, Summer of Bitcoin (Bitcoin mark only), DAAD RISE, Mitacs Globalink, CERN openlab, NSF REU,
-Jane Street, ColorStack.
+Neo Scholars, DAAD RISE, Mitacs Globalink, CERN openlab, NSF REU, Jane Street.

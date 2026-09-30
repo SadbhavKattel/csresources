@@ -17,6 +17,8 @@ BACKGROUND = ROOT / "assets" / "background.png"
 
 # Measured from the original Canva slides.
 CENTER_X = 540
+HEADER_TEXT = "APPLY IF YOU'RE A CS STUDENT"
+HEADER_TOP = 320         # sits below the top-left sparkle, above the logo
 TITLE_TOP = 856          # cap-height top of the title line
 TITLE_SIZE, TITLE_TRACK = 51, -3.0
 DESC_TOP = 966           # cap-height top of the first description line
@@ -36,16 +38,17 @@ def font(size):
     return f
 
 
-def line_width(f, text, track):
-    return f.getlength(text) + track * (len(text) - 1)
+def line_width(f, text, track, word_space=0):
+    return f.getlength(text) + track * (len(text) - 1) + word_space * text.count(" ")
 
 
-def draw_line(draw, f, text, top, track):
+def draw_line(draw, f, text, top, track, word_space=0):
     cap_offset = f.getbbox("H")[1]
-    x0 = CENTER_X - line_width(f, text, track) / 2
+    x0 = CENTER_X - line_width(f, text, track, word_space) / 2
     y = top - cap_offset
     for i, ch in enumerate(text):
-        draw.text((x0 + f.getlength(text[:i]) + track * i, y), ch, font=f, fill=(0, 0, 0))
+        x = x0 + f.getlength(text[:i]) + track * i + word_space * text[:i].count(" ")
+        draw.text((x, y), ch, font=f, fill=(0, 0, 0))
 
 
 def wrap(f, text, max_width, track):
@@ -110,6 +113,7 @@ def render(program, index):
 
     draw = ImageDraw.Draw(slide)
     title_font = font(TITLE_SIZE)
+    draw_line(draw, title_font, HEADER_TEXT, HEADER_TOP, DESC_TRACK, word_space=6)
     if line_width(title_font, program["title"], TITLE_TRACK) > DESC_MAX_WIDTH:
         raise ValueError(f"title too long for one line: {program['title']}")
     draw_line(draw, title_font, program["title"], TITLE_TOP, TITLE_TRACK)
