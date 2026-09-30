@@ -26,8 +26,13 @@
     "title": "SEO TECH DEVELOPER",
     "description": "Free program for first-year and sophomore CS students with technical training, mentorship, and a paid summer residency (about $6,000) to prepare for top tech internships.",
     "logo": {
-      "type": "card",
-      "text": "SEO Tech Developer"
+      "type": "padded",
+      "file": "logos/seo-tech-developer.png",
+      "inner": [
+        560,
+        200
+      ],
+      "pad": 45
     },
     "source": "https://tech.seo-usa.org/"
   },
@@ -36,8 +41,13 @@
     "title": "CODE2040 FELLOWS",
     "description": "10-month career accelerator for Black and Latinx college students in tech, with mentorship, technical training, and support landing a paid summer internship.",
     "logo": {
-      "type": "card",
-      "text": "Code2040"
+      "type": "padded",
+      "file": "logos/code2040-fellows.png",
+      "inner": [
+        560,
+        110
+      ],
+      "pad": 50
     },
     "source": "https://www.code2040.org/programs"
   },
@@ -46,8 +56,13 @@
     "title": "KP ENGINEERING FELLOWS",
     "description": "Paid summer fellowship where students work as engineers at Kleiner Perkins portfolio startups, plus founder talks and a network of 1,000+ alumni.",
     "logo": {
-      "type": "card",
-      "text": "Kleiner Perkins Fellows"
+      "type": "padded",
+      "file": "logos/kp-engineering-fellows.png",
+      "inner": [
+        560,
+        80
+      ],
+      "pad": 60
     },
     "source": "https://jobs.ashbyhq.com/kleinerperkinsfellows"
   },
@@ -56,8 +71,13 @@
     "title": "NEO SCHOLARS",
     "description": "Program for top CS undergrads at US universities, offering mentorship from leading founders and engineers, a strong peer community, and fast-tracked startup recruiting.",
     "logo": {
-      "type": "card",
-      "text": "Neo Scholars"
+      "type": "padded",
+      "file": "logos/neo-scholars.png",
+      "inner": [
+        400,
+        110
+      ],
+      "pad": 60
     },
     "source": "https://neo.com/apply"
   },
@@ -78,8 +98,13 @@
     "title": "DAAD RISE GERMANY",
     "description": "Funded summer research internships at German universities and institutes for undergrads from North America, the UK and Ireland. Most positions need no German.",
     "logo": {
-      "type": "card",
-      "text": "DAAD RISE"
+      "type": "padded",
+      "file": "logos/daad-rise-germany.png",
+      "inner": [
+        580,
+        200
+      ],
+      "pad": 40
     },
     "source": "https://www.daad.de/rise/en/rise-germany/"
   },

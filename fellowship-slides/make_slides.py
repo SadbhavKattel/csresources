@@ -9,7 +9,7 @@ import json
 import sys
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 FONT_PATH = ROOT / "assets" / "LeagueSpartan-Variable.ttf"
@@ -94,6 +94,20 @@ def make_card(spec):
     return card
 
 
+def make_padded(spec):
+    """Crop a logo to its content, then centre it on a panel of its own background colour."""
+    img = Image.open(ROOT / spec["file"]).convert("RGBA")
+    bg = img.getpixel((0, 0))
+    diff = Image.new("RGBA", img.size, bg)
+    mask = ImageChops.difference(img, diff).convert("L").point(lambda v: 255 if v > 24 else 0)
+    img = img.crop(mask.getbbox())
+    inner = fit(img, *spec["inner"])
+    pad = spec.get("pad", 40)
+    panel = Image.new("RGBA", (inner.width + 2 * pad, inner.height + 2 * pad), bg)
+    panel.alpha_composite(inner, (pad, pad))
+    return panel
+
+
 def load_logo(program):
     for ext in ("png", "jpg", "jpeg", "webp"):
         override = ROOT / "logos" / f"{program['slug']}.{ext}"
@@ -103,6 +117,8 @@ def load_logo(program):
     if spec["type"] == "image":
         img = Image.open(ROOT / spec["file"]).convert("RGBA")
         return fit(img, LOGO_BOX[0], min(LOGO_BOX[1], spec.get("max_height", LOGO_BOX[1])))
+    if spec["type"] == "padded":
+        return make_padded(spec)
     return make_card(spec)
 
 

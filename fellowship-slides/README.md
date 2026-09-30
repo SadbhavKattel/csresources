@@ -18,6 +18,6 @@ A file in `logos/` always replaces the white placeholder card.
 
 ## Logo status
 
-Real logos: Explore Microsoft, Uber Career Prep, Summer of Bitcoin, CodePath, ColorStack, Rewriting the Code.
-Placeholder name cards that still need the official logo: SEO Tech Developer, Code2040, KP Fellows,
-Neo Scholars, DAAD RISE, Mitacs Globalink, CERN openlab, NSF REU, Jane Street.
+Real logos: Explore Microsoft, Uber Career Prep, SEO Tech Developer, Code2040, KP Fellows, Neo Scholars,
+Summer of Bitcoin, DAAD RISE, CodePath, ColorStack, Rewriting the Code.
+Placeholder name cards that still need the official logo: Mitacs Globalink, CERN openlab, NSF REU, Jane Street.
