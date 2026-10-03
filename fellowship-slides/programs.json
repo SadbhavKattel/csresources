@@ -2,7 +2,7 @@
   {
     "slug": "explore-microsoft",
     "title": "EXPLORE MICROSOFT",
-    "description": "Paid 12-week summer internship for first- and second-year college students, where interns work in a small pod building real software with mentorship from Microsoft engineers.",
+    "description": "A paid 12-week summer internship built for first- and second-year students. You join a small pod of interns and build real software alongside Microsoft engineers.",
     "logo": {
       "type": "card",
       "mark": "assets/microsoft-wordmark.png",
@@ -13,7 +13,7 @@
   {
     "slug": "uber-career-prep",
     "title": "UBER CAREER PREP",
-    "description": "Free virtual program for CS undergrads with workshops, mock interviews, and 1:1 mentorship from an Uber engineer to help you land your first tech internship.",
+    "description": "A free virtual program that gets CS undergrads internship-ready through workshops, mock interviews, and 1:1 mentoring with an Uber engineer.",
     "logo": {
       "type": "card",
       "mark": "assets/uber-wordmark.png",
@@ -24,7 +24,7 @@
   {
     "slug": "seo-tech-developer",
     "title": "SEO TECH DEVELOPER",
-    "description": "Free program for first-year and sophomore CS students with technical training, mentorship, and a paid summer residency (about $6,000) to prepare for top tech internships.",
+    "description": "Free program for CS freshmen and sophomores that pairs technical training and mentorship with a paid summer residency (about $6,000).",
     "logo": {
       "type": "padded",
       "file": "logos/seo-tech-developer.png",
@@ -39,7 +39,7 @@
   {
     "slug": "code2040-fellows",
     "title": "CODE2040 FELLOWS",
-    "description": "10-month career accelerator for Black and Latinx college students in tech, with mentorship, technical training, and support landing a paid summer internship.",
+    "description": "A 10-month career accelerator for Black and Latinx students in tech. Fellows get mentorship, technical training, and help landing a paid summer internship.",
     "logo": {
       "type": "padded",
       "file": "logos/code2040-fellows.png",
@@ -54,7 +54,7 @@
   {
     "slug": "kp-engineering-fellows",
     "title": "KP ENGINEERING FELLOWS",
-    "description": "Paid summer fellowship where students work as engineers at Kleiner Perkins portfolio startups, plus founder talks and a network of 1,000+ alumni.",
+    "description": "Spend a paid summer as an engineer at a Kleiner Perkins portfolio startup, plus founder talks and a 1,000+ alumni network.",
     "logo": {
       "type": "padded",
       "file": "logos/kp-engineering-fellows.png",
@@ -69,7 +69,7 @@
   {
     "slug": "neo-scholars",
     "title": "NEO SCHOLARS",
-    "description": "Program for top CS undergrads at US universities, offering mentorship from leading founders and engineers, a strong peer community, and fast-tracked startup recruiting.",
+    "description": "Connects top CS undergrads at US schools with leading founders and engineers for mentorship, a tight-knit peer community, and fast-tracked startup recruiting.",
     "logo": {
       "type": "padded",
       "file": "logos/neo-scholars.png",
@@ -84,7 +84,7 @@
   {
     "slug": "summer-of-bitcoin",
     "title": "SUMMER OF BITCOIN",
-    "description": "Global remote summer program where university students contribute to Bitcoin open-source projects with mentors and earn a stipend paid in bitcoin.",
+    "description": "A remote summer program open to university students worldwide. Contribute to Bitcoin open-source projects with a mentor and get paid a stipend in bitcoin.",
     "logo": {
       "type": "card",
       "mark": "assets/summerofbitcoin-mark.png",
@@ -96,7 +96,7 @@
   {
     "slug": "daad-rise-germany",
     "title": "DAAD RISE GERMANY",
-    "description": "Funded summer research internships at German universities and institutes for undergrads from North America, the UK and Ireland. Most positions need no German.",
+    "description": "Funded summer research internships at German universities and institutes for undergrads from North America, the UK and Ireland. Most roles don't require German.",
     "logo": {
       "type": "padded",
       "file": "logos/daad-rise-germany.png",
@@ -111,7 +111,7 @@
   {
     "slug": "mitacs-globalink",
     "title": "MITACS GLOBALINK",
-    "description": "12-week research internships at Canadian universities for undergrads from Mitacs partner countries, working on real projects with faculty supervisors.",
+    "description": "Spend 12 weeks doing research at a Canadian university under a faculty supervisor. Open to undergrads from Mitacs partner countries.",
     "logo": {
       "type": "card",
       "text": "Mitacs Globalink"
@@ -121,7 +121,7 @@
   {
     "slug": "cern-openlab",
     "title": "CERN OPENLAB",
-    "description": "9-week paid summer program at CERN in Switzerland for bachelor's and master's students in computing, working on ML, data, and high-performance computing projects.",
+    "description": "A paid 9-week summer at CERN in Switzerland for bachelor's and master's computing students, working on ML, data, and high-performance computing.",
     "logo": {
       "type": "card",
       "text": "CERN openlab"
@@ -131,7 +131,7 @@
   {
     "slug": "nsf-reu",
     "title": "NSF REU",
-    "description": "Paid summer research programs at US universities for undergrads, usually with a stipend, housing, and travel covered. Hundreds of sites, many in computer science.",
+    "description": "Paid summer research at US universities for undergrads, often with stipend, housing, and travel covered. Hundreds of sites, many in computer science.",
     "logo": {
       "type": "card",
       "text": "NSF REU"
@@ -141,7 +141,7 @@
   {
     "slug": "jane-street-insight",
     "title": "JANE STREET INSIGHT",
-    "description": "Free multi-day program at Jane Street where students learn about trading, software engineering, and strategy, with travel and housing covered. No finance background needed.",
+    "description": "A free multi-day program at Jane Street covering trading, software engineering, and strategy. Travel and housing are covered, and no finance background is needed.",
     "logo": {
       "type": "image",
       "file": "logos/jane-street-insight.png",
@@ -152,7 +152,7 @@
   {
     "slug": "codepath",
     "title": "CODEPATH",
-    "description": "Nonprofit offering free virtual CS courses for college students, including a 10-week Technical Interview Prep course taught with engineers from top tech companies.",
+    "description": "A nonprofit running free virtual CS courses for college students, including a 10-week Technical Interview Prep course taught with engineers from top tech companies.",
     "logo": {
       "type": "image",
       "file": "logos/codepath.png",
@@ -163,7 +163,7 @@
   {
     "slug": "colorstack",
     "title": "COLORSTACK",
-    "description": "Free community for Black and Latinx CS students in the US and Canada, with career fairs, interview prep, mentorship, and access to internships.",
+    "description": "A free community for Black and Latinx CS students in the US and Canada, offering career fairs, interview prep, mentorship, and internship access.",
     "logo": {
       "type": "card",
       "mark": "assets/colorstack-wordmark.png",
@@ -174,7 +174,7 @@
   {
     "slug": "rewriting-the-code",
     "title": "REWRITING THE CODE",
-    "description": "Free global community for women in tech with a 12-month fellowship offering coaching, networking, and internship opportunities at partner companies.",
+    "description": "A free global community for women in tech. Its 12-month fellowship offers coaching, networking, and internship opportunities with partner companies.",
     "logo": {
       "type": "image",
       "file": "logos/rewriting-the-code.png",
