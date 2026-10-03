@@ -13,7 +13,14 @@ from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 FONT_PATH = ROOT / "assets" / "LeagueSpartan-Variable.ttf"
-BACKGROUND = ROOT / "assets" / "background.png"
+BACKGROUND = ROOT / "assets" / "background-dark.png"
+HELVETICA = {  # Nimbus Sans: URW's metric-compatible Helvetica clone
+    "regular": ROOT / "assets" / "NimbusSans-Regular.otf",
+    "bold": ROOT / "assets" / "NimbusSans-Bold.otf",
+}
+TEXT_COLOR = (255, 255, 255)
+COVER_LINES = [("still no internship?", "bold"), ("apply to these.", "regular")]
+COVER_SIZE = 96
 
 # Measured from the original Canva slides.
 CENTER_X = 540
@@ -48,7 +55,7 @@ def draw_line(draw, f, text, top, track, word_space=0):
     y = top - cap_offset
     for i, ch in enumerate(text):
         x = x0 + f.getlength(text[:i]) + track * i + word_space * text[:i].count(" ")
-        draw.text((x, y), ch, font=f, fill=(0, 0, 0))
+        draw.text((x, y), ch, font=f, fill=TEXT_COLOR)
 
 
 def wrap(f, text, max_width, track):
@@ -146,9 +153,26 @@ def render(program, index):
     return out, len(lines)
 
 
+def render_cover():
+    slide = Image.open(BACKGROUND).convert("RGBA")
+    draw = ImageDraw.Draw(slide)
+    fonts = [ImageFont.truetype(str(HELVETICA[w]), COVER_SIZE) for _, w in COVER_LINES]
+    pitch = COVER_SIZE * 1.15
+    top = 960 - pitch * len(COVER_LINES) / 2
+    for i, ((text, _), f) in enumerate(zip(COVER_LINES, fonts)):
+        if f.getlength(text) > 940:
+            raise ValueError(f"cover line too wide: {text}")
+        draw.text((CENTER_X, top + i * pitch), text, font=f, fill=TEXT_COLOR, anchor="mt")
+    out = ROOT / "output" / "00-cover.png"
+    slide.convert("RGB").save(out, optimize=True)
+    return out
+
+
 def main():
     programs = json.loads((ROOT / "programs.json").read_text())
     wanted = set(sys.argv[1:])
+    if not wanted or "cover" in wanted:
+        print(render_cover().relative_to(ROOT))
     for i, program in enumerate(programs, 1):
         if wanted and program["slug"] not in wanted:
             continue

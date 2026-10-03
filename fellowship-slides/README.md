@@ -4,7 +4,9 @@ New slides with an "APPLY IF YOU'RE A CS STUDENT" header, in the same template a
 
 - `output/` holds the finished slides.
 - `programs.json` holds each slide's title, description, logo, and source link.
-- `assets/background.png` is the original background with the logo and text removed.
+- `assets/background.png` is the original background with the logo and text removed;
+  `assets/background-dark.png` is the dark version the slides now use (rebuild it with `python3 make_dark_background.py`).
+- `output/00-cover.png` is a text-only cover ("still no internship? apply to these.") set in Nimbus Sans, a free Helvetica clone.
 - Font: League Spartan Bold (the Canva default). Size and letter spacing were measured to match the originals.
 
 ## Swapping in a real logo
