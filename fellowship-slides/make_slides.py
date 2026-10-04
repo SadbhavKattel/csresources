@@ -19,8 +19,18 @@ HELVETICA = {  # Nimbus Sans: URW's metric-compatible Helvetica clone
     "bold": ROOT / "assets" / "NimbusSans-Bold.otf",
 }
 TEXT_COLOR = (255, 255, 255)
-COVER_LINES = [("still no internship?", "bold"), ("apply to these.", "regular")]
 COVER_SIZE = 96
+# Each cover is a list of (text, weight); None marks a half-line gap.
+# The first cover becomes output/00-cover.png, the rest go to output/cover-options/.
+COVERS = {
+    "complain": [("you complain about", "bold"), ("the job market", "bold"), None,
+                 ("but haven't heard", "regular"), ("of these?", "regular")],
+    "bet": [("i bet you've", "bold"), ("never heard", "bold"), ("of these.", "bold")],
+    "cooked": [("stop saying the", "bold"), ("market is cooked.", "bold"), None,
+               ("you haven't applied", "regular"), ("to these yet.", "regular")],
+    "nobody": [("cs programs", "bold"), ("nobody tells", "bold"), ("you about.", "bold")],
+    "still": [("still no internship?", "bold"), ("apply to these.", "regular")],
+}
 
 # Measured from the original Canva slides.
 CENTER_X = 540
@@ -153,17 +163,23 @@ def render(program, index):
     return out, len(lines)
 
 
-def render_cover():
+def render_cover(name, lines, out):
     slide = Image.open(BACKGROUND).convert("RGBA")
     draw = ImageDraw.Draw(slide)
-    fonts = [ImageFont.truetype(str(HELVETICA[w]), COVER_SIZE) for _, w in COVER_LINES]
     pitch = COVER_SIZE * 1.15
-    top = 960 - pitch * len(COVER_LINES) / 2
-    for i, ((text, _), f) in enumerate(zip(COVER_LINES, fonts)):
+    height = sum(pitch if line else pitch / 2 for line in lines)
+    y = 960 - height / 2
+    for line in lines:
+        if line is None:
+            y += pitch / 2
+            continue
+        text, weight = line
+        f = ImageFont.truetype(str(HELVETICA[weight]), COVER_SIZE)
         if f.getlength(text) > 940:
-            raise ValueError(f"cover line too wide: {text}")
-        draw.text((CENTER_X, top + i * pitch), text, font=f, fill=TEXT_COLOR, anchor="mt")
-    out = ROOT / "output" / "00-cover.png"
+            raise ValueError(f"cover '{name}' line too wide: {text}")
+        draw.text((CENTER_X, y), text, font=f, fill=TEXT_COLOR, anchor="mt")
+        y += pitch
+    out.parent.mkdir(exist_ok=True)
     slide.convert("RGB").save(out, optimize=True)
     return out
 
@@ -172,7 +188,9 @@ def main():
     programs = json.loads((ROOT / "programs.json").read_text())
     wanted = set(sys.argv[1:])
     if not wanted or "cover" in wanted:
-        print(render_cover().relative_to(ROOT))
+        for i, (name, lines) in enumerate(COVERS.items()):
+            out = ROOT / "output" / ("00-cover.png" if i == 0 else f"cover-options/cover-{name}.png")
+            print(render_cover(name, lines, out).relative_to(ROOT))
     for i, program in enumerate(programs, 1):
         if wanted and program["slug"] not in wanted:
             continue
