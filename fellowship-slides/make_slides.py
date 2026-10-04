@@ -19,7 +19,7 @@ HELVETICA = {  # Nimbus Sans: URW's metric-compatible Helvetica clone
     "bold": ROOT / "assets" / "NimbusSans-Bold.otf",
 }
 TEXT_COLOR = (255, 255, 255)
-COVER_SIZE = 96
+COVER_SIZE = 60
 # Each cover is a list of (text, weight); None marks a half-line gap.
 # The first cover becomes output/00-cover.png, the rest go to output/cover-options/.
 COVERS = {
