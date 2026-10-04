@@ -163,8 +163,11 @@ def render(program, index):
     return out, len(lines)
 
 
-def render_cover(name, lines, out):
-    slide = Image.open(BACKGROUND).convert("RGBA")
+def render_cover(name, lines, out, plain=False):
+    if plain:
+        slide = Image.new("RGBA", (1080, 1920), (0, 0, 0, 255))
+    else:
+        slide = Image.open(BACKGROUND).convert("RGBA")
     draw = ImageDraw.Draw(slide)
     pitch = COVER_SIZE * 1.15
     height = sum(pitch if line else pitch / 2 for line in lines)
@@ -191,6 +194,8 @@ def main():
         for i, (name, lines) in enumerate(COVERS.items()):
             out = ROOT / "output" / ("00-cover.png" if i == 0 else f"cover-options/cover-{name}.png")
             print(render_cover(name, lines, out).relative_to(ROOT))
+            black = ROOT / "output" / "cover-options" / f"cover-{name}-black.png"
+            print(render_cover(name, lines, black, plain=True).relative_to(ROOT))
     for i, program in enumerate(programs, 1):
         if wanted and program["slug"] not in wanted:
             continue
