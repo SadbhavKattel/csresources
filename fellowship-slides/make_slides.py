@@ -25,8 +25,6 @@ COVER_SIZE = 60
 COVERS = {
     "complain": [("you complain about", "bold"), ("the job market", "bold"), None,
                  ("but haven't heard", "regular"), ("of these?", "regular")],
-    "you-are": [("the market isn't the problem.", "bold"), ("you are.", "bold"), None,
-                ("15 programs you were too lazy", "regular"), ("to google:", "regular")],
     "bet": [("i bet you've", "bold"), ("never heard", "bold"), ("of these.", "bold")],
     "cooked": [("stop saying the", "bold"), ("market is cooked.", "bold"), None,
                ("you haven't applied", "regular"), ("to these yet.", "regular")],
@@ -165,6 +163,14 @@ def render(program, index):
     return out, len(lines)
 
 
+# One-off covers rendered on a single plain background, worded differently so
+# the light and dark posts aren't identical.
+SINGLE_COVERS = {
+    "you-are-dark": ("black", [("the market isn't the problem.", "bold"), ("you are.", "bold"), None,
+                               ("3 programs you were too lazy", "regular"), ("to google:", "regular")]),
+    "you-are-light": ("light", [("stop blaming the market.", "bold"), ("it's you.", "bold"), None,
+                                ("3 programs you never", "regular"), ("bothered to apply to:", "regular")]),
+}
 PLAIN = {"black": ((0, 0, 0), (255, 255, 255)), "light": ((245, 244, 240), (12, 12, 12))}
 
 
@@ -204,6 +210,9 @@ def main():
             for plain in PLAIN:
                 alt = ROOT / "output" / "cover-options" / f"cover-{name}-{plain}.png"
                 print(render_cover(name, lines, alt, plain=plain).relative_to(ROOT))
+        for name, (plain, lines) in SINGLE_COVERS.items():
+            out = ROOT / "output" / "cover-options" / f"cover-{name}.png"
+            print(render_cover(name, lines, out, plain=plain).relative_to(ROOT))
     for i, program in enumerate(programs, 1):
         if wanted and program["slug"] not in wanted:
             continue
