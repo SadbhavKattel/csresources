@@ -25,6 +25,8 @@ COVER_SIZE = 60
 COVERS = {
     "complain": [("you complain about", "bold"), ("the job market", "bold"), None,
                  ("but haven't heard", "regular"), ("of these?", "regular")],
+    "you-are": [("the market isn't the problem.", "bold"), ("you are.", "bold"), None,
+                ("15 programs you were too lazy", "regular"), ("to google:", "regular")],
     "bet": [("i bet you've", "bold"), ("never heard", "bold"), ("of these.", "bold")],
     "cooked": [("stop saying the", "bold"), ("market is cooked.", "bold"), None,
                ("you haven't applied", "regular"), ("to these yet.", "regular")],
@@ -163,9 +165,14 @@ def render(program, index):
     return out, len(lines)
 
 
-def render_cover(name, lines, out, plain=False):
+PLAIN = {"black": ((0, 0, 0), (255, 255, 255)), "light": ((245, 244, 240), (12, 12, 12))}
+
+
+def render_cover(name, lines, out, plain=None):
+    color = TEXT_COLOR
     if plain:
-        slide = Image.new("RGBA", (1080, 1920), (0, 0, 0, 255))
+        bg, color = PLAIN[plain]
+        slide = Image.new("RGBA", (1080, 1920), bg + (255,))
     else:
         slide = Image.open(BACKGROUND).convert("RGBA")
     draw = ImageDraw.Draw(slide)
@@ -180,7 +187,7 @@ def render_cover(name, lines, out, plain=False):
         f = ImageFont.truetype(str(HELVETICA[weight]), COVER_SIZE)
         if f.getlength(text) > 940:
             raise ValueError(f"cover '{name}' line too wide: {text}")
-        draw.text((CENTER_X, y), text, font=f, fill=TEXT_COLOR, anchor="mt")
+        draw.text((CENTER_X, y), text, font=f, fill=color, anchor="mt")
         y += pitch
     out.parent.mkdir(exist_ok=True)
     slide.convert("RGB").save(out, optimize=True)
@@ -194,8 +201,9 @@ def main():
         for i, (name, lines) in enumerate(COVERS.items()):
             out = ROOT / "output" / ("00-cover.png" if i == 0 else f"cover-options/cover-{name}.png")
             print(render_cover(name, lines, out).relative_to(ROOT))
-            black = ROOT / "output" / "cover-options" / f"cover-{name}-black.png"
-            print(render_cover(name, lines, black, plain=True).relative_to(ROOT))
+            for plain in PLAIN:
+                alt = ROOT / "output" / "cover-options" / f"cover-{name}-{plain}.png"
+                print(render_cover(name, lines, alt, plain=plain).relative_to(ROOT))
     for i, program in enumerate(programs, 1):
         if wanted and program["slug"] not in wanted:
             continue
