@@ -1,0 +1,176 @@
+{
+  "google": [
+    {
+      "id": 15,
+      "title": "3Sum",
+      "difficulty": "Medium",
+      "frequency": 70.4,
+      "topic": "Two Pointers"
+    },
+    {
+      "id": 42,
+      "title": "Trapping Rain Water",
+      "difficulty": "Hard",
+      "frequency": 69.9,
+      "topic": "Two Pointers"
+    },
+    {
+      "id": 4,
+      "title": "Median of Two Sorted Arrays",
+      "difficulty": "Hard",
+      "frequency": 69.4,
+      "topic": "Binary Search"
+    },
+    {
+      "id": 128,
+      "title": "Longest Consecutive Sequence",
+      "difficulty": "Medium",
+      "frequency": 64.1,
+      "topic": "Union-Find"
+    },
+    {
+      "id": 39,
+      "title": "Combination Sum",
+      "difficulty": "Medium",
+      "frequency": 47.0,
+      "topic": "Backtracking"
+    },
+    {
+      "id": 102,
+      "title": "Binary Tree Level Order Traversal",
+      "difficulty": "Medium",
+      "frequency": 46.0,
+      "topic": "Tree"
+    },
+    {
+      "id": 354,
+      "title": "Russian Doll Envelopes",
+      "difficulty": "Hard",
+      "frequency": 41.4,
+      "topic": "Binary Search"
+    },
+    {
+      "id": 1094,
+      "title": "Car Pooling",
+      "difficulty": "Medium",
+      "frequency": 35.2,
+      "topic": "Sorting"
+    }
+  ],
+  "amazon": [
+    {
+      "id": 146,
+      "title": "LRU Cache",
+      "difficulty": "Medium",
+      "frequency": 80.2,
+      "topic": "Linked List"
+    },
+    {
+      "id": 49,
+      "title": "Group Anagrams",
+      "difficulty": "Medium",
+      "frequency": 74.9,
+      "topic": "Sorting"
+    },
+    {
+      "id": 207,
+      "title": "Course Schedule",
+      "difficulty": "Medium",
+      "frequency": 72.0,
+      "topic": "Depth-First Search"
+    },
+    {
+      "id": 994,
+      "title": "Rotting Oranges",
+      "difficulty": "Medium",
+      "frequency": 70.6,
+      "topic": "Breadth-First Search"
+    },
+    {
+      "id": 23,
+      "title": "Merge k Sorted Lists",
+      "difficulty": "Hard",
+      "frequency": 69.2,
+      "topic": "Linked List"
+    },
+    {
+      "id": 767,
+      "title": "Reorganize String",
+      "difficulty": "Medium",
+      "frequency": 68.1,
+      "topic": "Greedy"
+    },
+    {
+      "id": 236,
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "difficulty": "Medium",
+      "frequency": 65.2,
+      "topic": "Tree"
+    },
+    {
+      "id": 472,
+      "title": "Concatenated Words",
+      "difficulty": "Hard",
+      "frequency": 39.0,
+      "topic": "Dynamic Programming"
+    }
+  ],
+  "microsoft": [
+    {
+      "id": 5,
+      "title": "Longest Palindromic Substring",
+      "difficulty": "Medium",
+      "frequency": 79.4,
+      "topic": "Two Pointers"
+    },
+    {
+      "id": 53,
+      "title": "Maximum Subarray",
+      "difficulty": "Medium",
+      "frequency": 72.6,
+      "topic": "Divide and Conquer"
+    },
+    {
+      "id": 31,
+      "title": "Next Permutation",
+      "difficulty": "Medium",
+      "frequency": 66.8,
+      "topic": "Two Pointers"
+    },
+    {
+      "id": 22,
+      "title": "Generate Parentheses",
+      "difficulty": "Medium",
+      "frequency": 64.0,
+      "topic": "Dynamic Programming"
+    },
+    {
+      "id": 76,
+      "title": "Minimum Window Substring",
+      "difficulty": "Hard",
+      "frequency": 64.0,
+      "topic": "Sliding Window"
+    },
+    {
+      "id": 297,
+      "title": "Serialize and Deserialize Binary Tree",
+      "difficulty": "Hard",
+      "frequency": 52.3,
+      "topic": "Tree"
+    },
+    {
+      "id": 105,
+      "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+      "difficulty": "Medium",
+      "frequency": 49.5,
+      "topic": "Divide and Conquer"
+    },
+    {
+      "id": 475,
+      "title": "Heaters",
+      "difficulty": "Medium",
+      "frequency": 42.5,
+      "topic": "Two Pointers"
+    }
+  ]
+}
