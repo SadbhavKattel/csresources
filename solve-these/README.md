@@ -8,10 +8,11 @@ Edit `problems.json` or the `COVERS` text in `make_solve.py`, then run `python3 
 
 ## Data
 
-Problems and frequency come from the community dataset
+Problems were picked from the community dataset
 [liquidslr/interview-company-wise-problems](https://github.com/liquidslr/interview-company-wise-problems)
-("Six Months" lists). Frequency is that dataset's 0–100 relative score, not an official LeetCode count.
+("Six Months" lists), favouring problems each company asks more often than the other two so the posts don't repeat.
+The list shows no frequency numbers because they can't be verified. Each problem gets one topic tag
+(BFS, DFS, Two Pointers, Dynamic Programming, ...), chosen from that problem's own LeetCode tags.
 Problem numbers come from [krishnadey30/LeetCode-Questions-CompanyWise](https://github.com/krishnadey30/LeetCode-Questions-CompanyWise).
-Each company's list favours problems that company asks more often than the other two, so the posts don't repeat.
 
 Logos: Font Awesome Free brand icons (`@iconify-json/fa6-brands`). Font: Nimbus Sans (Helvetica clone).
