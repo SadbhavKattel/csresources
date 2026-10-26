@@ -1,0 +1,4 @@
+.cache/
+report/
+games_*.csv
+__pycache__/
